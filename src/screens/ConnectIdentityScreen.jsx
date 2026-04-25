@@ -6,11 +6,13 @@ import ProgressIndicator from '../components/ProgressIndicator.jsx'
 import ConnectionCard from '../components/ConnectionCard.jsx'
 import { identityVerificationMethods } from '../data/mockData'
 import { useForm } from 'react-hook-form'
+
 const handleGmailLogin = async () => {
   const res = await fetch("/api/gmail/auth-url");
   const data = await res.json();
   window.location.href = data.url;
 };
+
 const ConnectIdentityScreen = () => {
   const navigate = useNavigate()
   const [selectedMethod, setSelectedMethod] = useState(null)
@@ -32,19 +34,7 @@ const ConnectIdentityScreen = () => {
       <ProgressIndicator />
 
       <div className="flex-1 flex items-center justify-center px-4 py-12">
-  <motion.div
-    className="max-w-2xl w-full"
-    initial={{ opacity: 0, x: 100 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.5 }}
-  >
-    {/* Header */}
-    <div className="text-center mb-8">
-      ...
-    </div>
-  </motion.div>
-</div>
-
+        <motion.div
           className="max-w-2xl w-full"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
@@ -64,13 +54,18 @@ const ConnectIdentityScreen = () => {
           </div>
 
           {!showForm ? (
-          <button onClick={handleGmailLogin} className="mb-4 p-3 bg-blue-600 text-white rounded-lg">
-            Connect Gmail
-          </button>
-            ) : (
-              <>
-               {/* Method Selection */}
-               <div className="space-y-4 mb-8">
+            <button
+              onClick={handleGmailLogin}
+              className="mb-4 p-3 bg-blue-600 text-white rounded-lg"
+            >
+              Connect Gmail
+            </button>
+          ) : (
+            <>
+              {/* Method Selection */}
+              <div className="space-y-4 mb-8">
+                {/* Your method selection content continues here */}
+
 
               <div className="glass-card mb-6">
                 <div className="flex items-start space-x-3">
