@@ -6,7 +6,11 @@ import ProgressIndicator from '../components/ProgressIndicator.jsx'
 import ConnectionCard from '../components/ConnectionCard.jsx'
 import { identityVerificationMethods } from '../data/mockData'
 import { useForm } from 'react-hook-form'
-
+const handleGmailLogin = async () => {
+  const res = await fetch("/api/gmail/auth-url");
+  const data = await res.json();
+  window.location.href = data.url;
+};
 const ConnectIdentityScreen = () => {
   const navigate = useNavigate()
   const [selectedMethod, setSelectedMethod] = useState(null)
@@ -48,6 +52,9 @@ const ConnectIdentityScreen = () => {
           </div>
 
           {!showForm ? (
+          <button onClick={handleGmailLogin} className="mb-4 p-3 bg-blue-600 text-white rounded-lg">
+            Connect Gmail
+          </button>
             /* Method Selection */
             <div className="space-y-4 mb-8">
               <div className="glass-card mb-6">
