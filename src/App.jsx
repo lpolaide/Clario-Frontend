@@ -1,3 +1,4 @@
+import GmailCallback from "./screens/GmailCallback.jsx";
 import { useTheme } from './context/ThemeContext'
 import lightTheme from './styles/themes/lightTheme'
 import darkTheme from './styles/themes/darkTheme'
@@ -27,6 +28,7 @@ const App = () => {
       }}
     >
       <Routes>
+        <Route path="/gmail/callback" element={<GmailCallback />} />
         <Route path="/" element={<Navigate to="/welcome" replace />} />
         <Route path="/welcome" element={<WelcomeScreen />} />
         <Route path="/connect-email" element={<ConnectEmailScreen />} />
