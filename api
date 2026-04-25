@@ -1,0 +1,9 @@
+Clario-Frontend/
+  api/
+    gmail/
+      auth-url.js
+      callback.js
+  public/
+  src/
+  package.json
+  vite.config.js
