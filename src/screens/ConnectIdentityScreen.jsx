@@ -55,7 +55,7 @@ const ConnectIdentityScreen = () => {
           <button onClick={handleGmailLogin} className="mb-4 p-3 bg-blue-600 text-white rounded-lg">
             Connect Gmail
           </button>
-            /* Method Selection */
+            {/* Method Selection */}
             <div className="space-y-4 mb-8">
               <div className="glass-card mb-6">
                 <div className="flex items-start space-x-3">
