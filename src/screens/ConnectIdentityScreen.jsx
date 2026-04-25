@@ -32,7 +32,19 @@ const ConnectIdentityScreen = () => {
       <ProgressIndicator />
 
       <div className="flex-1 flex items-center justify-center px-4 py-12">
-        <motion.div
+  <motion.div
+    className="max-w-2xl w-full"
+    initial={{ opacity: 0, x: 100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5 }}
+  >
+    {/* Header */}
+    <div className="text-center mb-8">
+      ...
+    </div>
+  </motion.div>
+</div>
+
           className="max-w-2xl w-full"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
